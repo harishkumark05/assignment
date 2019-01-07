@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fundemantals</title>
+</head>
+<body>
+	<h2>object to list the properties </h2>
+	<p>The object is:<span id="out1"></span></p>
+	<h2>Delete a property from object</h2>
+	<p>before deleting<span id="out2"></span></p>
+	<p>After deleting<span id="out3"></span></p>
+	<h2>lenth of the object</h2>
+	<p id="out4"></p>
+	<h2>reading status of the book</h2>
+	<p>see output in console</p>
+	<h2> volume of cylinder</h2>
+	<label>Radius:</label>
+	<input type="number" name="value" id="demo1">
+    <label>Height:</label>
+	<input type="number" name="value" id="demo2">
+	<button onclick="myfun1()">click me</button>
+	<p> the volume of cylinder is:<span id="out5"></span></p>
+
+<script type="text/javascript">
+
+		var object1={name:"harish",location:"hosur",age:"22",Dob:"03-01-1996"};
+		document.getElementById('out1').innerHTML=Object.keys(object1);
+
+		var object2={name:"harish",location:"hosur",age:"22",Dob:"03-01-1996"};
+		document.getElementById('out2').innerHTML=Object.keys(object2);
+		delete object2.age;
+		document.getElementById('out3').innerHTML=Object.keys(object2);
+        document.getElementById('out4').innerHTML=Object.keys(object1).length;
+
+        var library = [ 
+   {
+       author: 'Bill Gates',
+       title: 'The Road Ahead',
+       readingStatus: true
+   },
+   {
+       author: 'Steve Jobs',
+       title: 'Walter Isaacson',
+       readingStatus: true
+   },
+   {
+       author: 'Suzanne Collins',
+       title:  'Mockingjay: The Final Book of The Hunger Games', 
+       readingStatus: false
+   }];
+   for (const x of library){
+   	if (x.readingStatus ===true) {
+   		console.log('you read this book:'+x.title);
+   	}
+   	else{
+   		console.log('you have not read this book:'+x.title);
+   	}
+   }
+   function myfun1(){
+   	var r= document.getElementById('demo1').value;
+   	var h= document.getElementById('demo2').value;
+   	var z=(Math.PI*r*r*h);
+   	document.getElementById('out5').innerHTML = z.toFixed(4);
+   }
+ function swap(arr,x,y){
+ 	var temp=arr[x];
+ 	arr[x]=arr[y] 	;
+ 	arr[y]=temp;
+}
+function sort(arr){
+	var len = arr.length,i,j,stop;
+	for (i = 0; i <len; i++) {
+	for(j=0,stop=len-i;j<stop;j++){
+		if (arr[j]>arr[j+1]) {
+			swap(arr,j,j+1);
+		}
+	}
+	}
+	return arr;
+}
+console.log(sort([3, 0, 2, 5, -1, 4, 1]));
+</script>
+</body>
+</html>

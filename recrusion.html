@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>recrusion</title>
+</head>
+<body>
+	<h2>factorial</h2>
+	<h2>GCD of two numbers</h2>
+	<input type="number" name="value" id="demo2" placeholder="Enter 1st number">
+	<input type="number" name="value" id="demo3" placeholder="Enter 2nd number">
+	<button onclick="myfun2()">click</button>
+	<p id="out2"></p>
+<script type="text/javascript">
+function myfun1(n){
+	if (n===0) {
+		return 1;
+	}
+	return n*(myfun1(n-1));
+}
+console.log(myfun1(5));
+
+	var gcd=function(a,b){
+	
+	if (!b) {
+		return a
+	}
+	else
+	{
+       return gcd(b,a%b);
+   }
+};
+   console.log(gcd(100,200));
+</script>
+</body>
+</html>
