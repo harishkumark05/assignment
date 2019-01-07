@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>javascript Basic</title>
+</head>
+<body style="text-align: center;">
+
+  <h1>javascript for displaying current date and time</h1>
+  <p>Today's Day is:<span id="demo1"></span></p>
+  <p>current Time is:<span id="demo2"></span></p>
+
+  <h2>printing the current page</h2>
+  <button onclick="print1()">click here to print this page</button>
+
+  <h2>  mm-dd-yyyy format</h2>
+  <p id="demo3"></p>
+
+  <h2> area of triangle 5,6,7</h2>
+  <p id="demo4"></p>
+
+  <h2>q6-leap year or not</h2>
+  <input type="number" name="value" id="dem5">
+  <button onclick="funLeap()"> click me</button>
+  <p id="demo5"></p>
+
+  <h2>random number matching between 1 to10</h2>
+  <input type="number" name="value" id="demoran">
+  <button onclick="funran()">click here</button>
+  <p id="outran"></p>
+
+  <h2>divide and multiply of two numbers</h2>
+  <form>
+    <label>1st number:
+      <input type="text" name="value" id="demo6">
+    </label>
+  </form>
+  <form>
+    <label>2nd number:
+      <input type="text" name="value" id="demo7">
+    </label>
+  </form>
+    <button onclick="mul()">multiply</button>
+    <button onclick="divd()">divide</button>
+  </form>
+  <p>the value is:<span id="out"></span></p>
+
+  <h2>celcius to farenheit</h2>
+  <p id="demo8"></p>
+  <h2>farenheit to celcius</h2>
+  <p id="demo9"></p>
+
+  <h2>url of the page</h2>
+  <p id="demo10"></p>
+
+  <h2>execute variable using user defined name</h2>
+  <p id="demo11"></p>
+  
+  <h2>finding the file extension</h2>
+  <input type="text" name="value" id="dem12">
+  <button onclick="fun12()"> click here</button>
+  <p id="demo12"></p>
+
+  <h2>The difference between a given number and 13, if the number is greater than 13 return double the absolute difference</h2>
+  <form>
+    <input type="text" name="value" id="demo13" placeholder="enter a number">
+  </form>
+  <button onclick="difference()">differnece or absolue double</button>
+  <p id="out1"></p>
+
+  <h2>sum  of two numbers if two values are same return triple the sum</h2>
+  <form>
+    <label>Enter first value:
+      <input type="number" name="value"  id="demo14">
+    </label> 
+  </form>
+  <form>
+    <label> Enter second value
+      <input type="number" name="value" id="demo15">
+    </label>
+  </form>
+  <button onclick="tsum()">click me</button>
+  <p>the result is:<span id="out2"></span></p>
+
+  <h2>Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their absolute difference if the specified number is greater than 19</h2>
+  <input type="text" name="value" id="demo16">
+  <button onclick="diff()">click </button>
+  <p id="out3"></p>
+
+  <h2>Checks 2 given numbers and return true if one of the number is 50 or if their sum is 50.</h2>
+  <form>
+    <label>Enter first value:
+    <input type="number" name="value" id="demo17">
+      </label>
+  </form>
+  <form>
+    <label>Enter second value:
+    <input type="number" name="value" id="demo18">
+      </label>
+  </form>
+  <button onclick="diff50()"> click me</button>
+  <p id="out4"></p>
+
+  <h2> to check interger within 2o of 100 or 400</h2>
+  <input type="number" name="value" id="demo19">
+  <button onclick="intg20()">submit</button>
+  <p id="out5"></p>
+
+  <h2>to check two integers 1 is positive and one is negative</h2>
+  <form>
+    <label>Enter first value:
+    <input type="number" name="value" id="demo20">
+      </label>
+  </form>
+  <form>
+    <label>Enter second value:
+    <input type="number" name="value" id="demo21">
+      </label>
+  </form>
+  <button onclick="posneg()"> click me</button>
+  <p id="out6"></p>
+
+  <h2>py infront of the string</h2>
+  <form>
+    <label>Enter a string
+    <input type="text" name="value" id="demo22">
+      </label>
+  </form>
+  <button onclick="pyth()"> click me</button>
+  <p id="out7"></p>
+
+    <h2>remove a character from a specified position</h2>
+    <input type="text" name="value" id="demostrx" placeholder="text here">
+    <input type="text" name="value" id="demostry" placeholder="index">
+    <button  onclick="strn()">click here</button>
+    <p id="strxy"></p>
+
+    <h2>changing position of first and last char of a string</h2>
+    <input type="text" name="value" id="demo24">
+    <button onclick="str()"> click me</button>
+    <p id="out8"></p>
+
+    <h2>first character of string added to first  and last</h2>
+    <input type="text" name="value" id="demo25">
+    <button onclick="strfirst()"> click me</button>
+    <p id="out9"></p>
+
+    <h2>to check a number multiply by 3 or 7</h2>
+    <input type="number" name="value" id="demo26">
+    <button onclick="fun25()"> click me</button>
+    <p id="out10"></p>
+
+    <h2>string last 3 three characters to front and back.</h2>
+    <input type="text" name="value" id="demo27">
+    <button onclick="fun26()"> click me</button>
+    <p id="out11"></p>
+
+    <h2>q27-to check string is java else false</h2>
+    <input type="text" name="value" id="demo28">
+    <button onclick="fun27()"> click me</button>
+    <p id="out12"></p>
+
+    <h2>q28-return true if any oftwo integers between 50 and 99</h2>
+    <input type="number" name="value" id="demo29">
+    <input type="number" name="value" id="demo30">
+    <button onclick="fun28()"> click me</button>
+    <p id="out13"></p>
+
+    <h2>q29-return true if any of three integers between 50 and 99</h2>
+    <input type="number" name="value" id="demo31">
+    <input type="number" name="value" id="demo32">
+    <input type="number" name="value" id="demo33">
+    <button onclick="fun29()"> click me</button>
+    <p id="out14"></p> 
+
+    <h2>q30-find max of three numbers</h2>
+    <input type="number" name="value" id="demo34">
+    <input type="number" name="value" id="demo35">
+    <input type="number" name="value" id="demo36">
+    <button onclick="fun30()"> click me</button>
+    <p id="out15"></p>
+
+    <h2>q31-to find a number nearest  to 100 from two integers</h2>
+    <p>output in console</p>
+
+    <h2> q-33 two numbers between40..60 or 70..100</h2>
+    <input type="number" name="value" id="demo37">
+    <input type="number" name="value" id="demo38">
+    <button onclick="fun32()"> click me</button>
+    <p id="out16"></p>
+
+    <h2>q-34 maximum of two number if integers between 40 and 60</h2>
+    <input type="number" name="value" id="demo39">
+    <input type="number" name="value" id="demo40">
+    <button onclick="fun33()">click me</button>
+    <p id="out17"></p>
+
+    <h2>q-35 to check whether the last index of number is same for 3 numbers</h2>
+    <input type="number" name="value" id="demo41">
+    <input type="number" name="value" id="demo42">
+    <input type="number" name="value" id="demo43">
+    <button onclick="fun34()">click me</button>
+    <p id="out18"></p>
+
+  
+<script>
+  var x =new Date();
+  var week =new Array(7);
+  week[0]="sunday";
+  week[1]="monday";
+  week[2]="tuesday";
+  week[3]="wednesday";
+  week[4]="thursday";
+  week[5]="friday";
+  week[6]="saturday";
+  var y =week[x.getDay()];
+  document.getElementById("demo1").innerHTML=y; 
+  var hours= x.getHours();
+  if(hours>12){
+    ampm="PM";
+  }
+  else{
+    ampm="AM"
+  }
+    document.getElementById("demo2").innerHTML= (hours - 12 +""+ampm + ":"+
+      x.getMinutes() + ":"+
+       x.getSeconds()
+       );
+
+
+    function print1(){
+      window.print();
+    }
+
+
+    var mm =x.getMonth();
+    var dd =x.getDate();
+    var yy =x.getFullYear();
+    if(mm<10){
+      mm="0"+mm;
+    }
+    if (dd<10) {
+      dd="0"+dd;
+    }
+
+
+    document.getElementById("demo3").innerHTML=(mm+"-"+dd+"-"+yy);
+    var s1=5,s2=6,s3=7;
+    var s=(s1+s2+s3)/2;
+    var area=Math.sqrt((s*(s-s1)*(s-s2)*(s-s3)));
+    document.getElementById("demo4").innerHTML=area;
+
+    function funLeap(){
+    leapYear=document.getElementById("dem5").value;
+    x=(leapYear %100 ===0) ? (leapYear %400===0):(leapYear%4===0);
+    document.getElementById("demo5").innerHTML=x;
+}
+
+
+    for (var n=2014;n <=2050 ;n++ ){
+      var d =new Date(n,0,1);
+      if(d.getDay()===0)
+        alert("jan 1st being sunday"+n);
+    }
+
+     function funran(){
+    var ran=Math.ceil(Math.random()*10);
+    var ranOut=document.getElementById("demoran").value;
+    if (ranOut==ran) {
+      document.getElementById("outran").innerHTML='matched';
+    }
+    else{
+      document.getElementById("outran").innerHTML='not matched';
+    }
+}
+    
+    function mul(){
+      n1=document.getElementById("demo6").value;
+      n2=document.getElementById("demo7").value;
+      document.getElementById("out").innerHTML=n1*n2;
+    }
+    function divd(){
+      n1=document.getElementById("demo6").value;
+      n2=document.getElementById("demo7").value;
+      document.getElementById("out").innerHTML=n1/n2;
+    }
+    
+
+    function c2f(celcius){
+      var ctof=((celcius*9)+(32*5))/5;
+      document.getElementById("demo8").innerHTML=celcius+"\xB0c is"+ctof+"\xB0f";
+    }
+    function f2c(fahrenheit){
+      var ftoc =(5*(fahrenheit-32))/9;
+      document.getElementById("demo9").innerHTML=fahrenheit+"\xB0f is"+ftoc+"\xB0c"
+    }
+    c2f(60);
+    f2c(45);
+    
+
+    document.getElementById("demo10").innerHTML=document.url;
+     var name ='harish';
+     document.getElementById("demo11").innerHTML=name;
+     
+
+     function fun12(){
+   fileName=document.getElementById("dem12").value;
+      fileExt=fileName.split('.').pop();
+     document.getElementById("demo12").innerHTML= fileExt;
+ }
+
+     function difference(){
+      n = document.getElementById("demo13").value;
+      if (n<13) {
+        n =13-n;
+         document.getElementById("out1").innerHTML="the number of difference is :"+n;
+      }
+      else if (n>13) {
+        n =(n-13)*2;
+         document.getElementById("out1").innerHTML="the number of abs diff double by 2 is:"+n;
+     }
+   }
+
+
+   function tsum(){
+    x1=document.getElementById("demo14").value;
+    x2=document.getElementById("demo15").value;
+    if (x1==x2) {
+      y1=3*(+x1 + +x2);
+      document.getElementById("out2").innerHTML=y1;
+    } else {
+      y1= +x1 + +x2;
+      document.getElementById("out2").innerHTML=y1;
+    }
+   }
+
+
+   function diff(){
+    diff1=document.getElementById("demo16").value;
+    if (diff1<19) {
+      diff1=19-diff1;
+      document.getElementById("out3").innerHTML="the difference <19 is:"+diff1;
+    } else {
+      diff1=19*(diff1-19);
+      document.getElementById("out3").innerHTML="the  difference of triple >19 is:"+diff1;
+    }
+   }
+
+
+   function diff50(){
+    var val1=document.getElementById("demo17").value;
+    var val2=document.getElementById("demo18").value;
+    var val3=parseInt(document.getElementById("demo17").value) + parseInt(document.getElementById("demo18").value);
+    if (val1 ==50 || val2 ==50) {
+      document.getElementById("out4").innerHTML="true";
+    }
+    else if (val3 ==50) {
+      document.getElementById("out4").innerHTML="true"; 
+    }
+    else{
+      document.getElementById("out4").innerHTML="false";
+    }
+   }
+
+
+   function intg20(){
+    val20=document.getElementById("demo19").value;
+    document.getElementById("out5").innerHTML=((Math.abs(100-val20)<=20) || (Math.abs(400-val20
+      )<=20))  ;
+   }
+
+
+   function posneg(){
+    var val3=document.getElementById("demo20").value;
+    var val4=document.getElementById("demo21").value;
+    if ((val3<0&&val4>0)||(val3>0&&val4<0)) {
+      document.getElementById("out6").innerHTML="true";
+    }
+    else{
+      document.getElementById("out6").innerHTML="false";
+    }
+   
+   }
+
+
+   function pyth(){
+       var valpyth=document.getElementById("demo22").value;
+       document.getElementById("out7").innerHTML=valpyth.substring(0,2)=== 'py'?valpyth:'py'+valpyth;
+   }
+
+
+   function strn(strx,stry){
+        strx=document.getElementById("demostrx").value;
+        stry=document.getElementById("semostry").value;
+        var p1= strx.substring(0,stry);
+        var p2= strx.substring((stry+1),strx.length);
+         document.getElementById("outstrxy").innerHTML= p1+p2;
+   }
+   
+
+   function str(str1){
+    str1=document.getElementById("demo24").value;
+     stri=str1.substring(1, str1.length - 1);
+    document.getElementById("out8").innerHTML=(str1.charAt(str1.length-1)) + stri +str1.charAt(0);
+   }
+
+
+   function strfirst(){
+    strfirst1=document.getElementById("demo25").value;
+    first1=strfirst1.substring(0,1);
+    document.getElementById("out9").innerHTML= first1 +strfirst1 +first1;
+   }
+
+
+   function fun25(){
+    x=document.getElementById("demo26").value;
+    if (x%3==0 || x%7==0) {
+      document.getElementById("out10").innerHTML='true';
+    }
+    else{
+      document.getElementById("out10").innerHTML='false';
+    }
+   }
+
+
+   function fun26(){
+    strget=document.getElementById("demo27").value;
+    seprt=strget.substring((strget.length-3),(strget.length-0));
+    document.getElementById("out11").innerHTML=seprt + strget + seprt;
+   }
+
+
+   function fun27(){
+    str27=document.getElementById("demo28").value;
+    str27set=str27.substring(0,4);
+    if (str27set=='java') {
+      document.getElementById("out12").innerHTML='true';
+    }
+    else{
+      document.getElementById("out12").innerHTML='false';
+    }
+   }
+
+
+   function fun28(){
+    x=document.getElementById("demo29").value;
+    y=document.getElementById("demo30").value;
+    if (x>50&&x<90||y>50&&y<99) {
+      document.getElementById("out13").innerHTML='true';
+    }
+    else{
+      document.getElementById("out13").innerHTML='false';
+    }
+   }
+
+
+   function fun29(){
+    x=document.getElementById("demo31").value;
+    y=document.getElementById("demo32").value;
+    z=document.getElementById("demo33").value;
+    if (x>50&&x<90||y>50&&y<99||z>50&&z<99) {
+      document.getElementById("out14").innerHTML='true';
+    }
+    else{
+      document.getElementById("out14").innerHTML='false';
+    }
+   }
+
+
+   function  fun30(){
+    x=document.getElementById("demo34").value;
+    y=document.getElementById("demo35").value;
+    z=document.getElementById("demo36").value;
+    document.getElementById("out15").innerHTML=Math.max(x,y,z);
+   }
+
+
+  function fun31(x,y){
+      if(x != y){
+      x1=Math.abs(x-100);
+      y1=Math.abs(y-100);
+    if (x1<y1)
+    { 
+      return x;
+    }
+    if (y1<x1) 
+    {
+    return y;
+    }
+      return 0;
+   }
+   else
+      return false;
+   }
+console.log(fun31(89,89));
+console.log(fun31(90,89));
+console.log(fun31(89,90));
+console.log(fun31(-89,90));
+
+function fun32(){
+  x=document.getElementById("demo37").value;
+  y=document.getElementById("demo38").value;
+  if((x>40&&x<60&&y>40&&y<60)||(x>70&&x<100&&y>70&&y<100))
+{
+document.getElementById("out16").innerHTML= 'true';
+}
+else{
+  document.getElementById("out16").innerHTML='false';
+}
+
+}
+
+
+function fun33(){
+  x=document.getElementById("demo39").value;
+  y=document.getElementById("demo40").value;
+  if (x>40&&y<60) {
+    document.getElementById("out17").innerHTML=Math.max(x,y);
+  }
+  else{
+    document.getElementById("out17").innerHTML='number is not in the specified limit-false';
+  }
+
+}
+
+
+function fun34(){
+  x=document.getElementById("demo41").value;
+  y=document.getElementById("demo42").value;
+  z=document.getElementById("demo43").value;
+  if ((x>0)&&(y>0)&&(z>0)) {
+    document.getElementById("out18").innerHTML= (x%10==y%10&&y%10==z%10&&z%10==x%10);
+  }
+  else
+    document.getElementById("out18").innerHTML= 'false';
+
+}
+</script>
+</body>
+</html> 

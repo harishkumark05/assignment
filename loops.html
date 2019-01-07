@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript conditional statement and loop exercise</title>
+</head>
+<body>
+	<h2>to display larger number</h2>
+	<input type="number" name="value" id="demo1" placeholder="Enter 1st number">
+	<input type="number" name="value" id="demo2" placeholder="Enter 2nd number">
+	<button onclick="myfun1()"> click me</button>
+	<p>the largest number is:<span id="out1"></span></p>
+
+	<h2> conditional statement to find sign of product of three numbers</h2>
+	<input type="number" name="value" id="demo3" placeholder="Enter 1st number">
+	<input type="number" name="value" id="demo4" placeholder="Enter 2nd number">
+	<input type="number" name="value" id="demo5" placeholder="Enter 3rd number">
+	<button onclick="myfun2()"> click me</button>
+	<p id="out2"></p>
+
+	<h2>conditional statement to sort three numbers </h2>
+	<input type="number" name="value" id="demo6" placeholder="Enter 1st number">
+	<input type="number" name="value" id="demo7" placeholder="Enter 2nd number">
+	<input type="number" name="value" id="demo8" placeholder="Enter 3rd number">
+	<button onclick="myfun3()"> click me</button>
+	<p id="out3"></p>
+
+	<h2>conditional statement to find largest of 5 numbers </h2>
+	<input type="number" name="value" id="demo9" placeholder="Enter 1st number">
+	<input type="number" name="value" id="demo10" placeholder="Enter 2nd number">
+	<input type="number" name="value" id="demo11" placeholder="Enter 3rd number">
+	<input type="number" name="value" id="demo12" placeholder="Enter 4th number">
+	<input type="number" name="value" id="demo13" placeholder="Enter 5th number">
+	<button onclick="myfun4()"> click me</button>
+	<p id="out4	"></p>
+
+	<h2>for loop to iterate from 0 to 15</h2>
+	<p> output in console<p>
+
+	<h2>compute average marks and grade</h2>
+	<p>out put in console</p>
+
+	<h2>javascript fizzbuzz program</h2>
+	<p>output in console</p>
+	
+<script type="text/javascript">
+	function myfun1(){
+		var x1=document.getElementById("demo1").value;
+		var x2= document.getElementById("demo2").value;
+		if(x1>x2){
+			document.getElementById("out1").innerHTML=x1;
+		}
+		else{
+			document.getElementById("out1").innerHTML=x2; 
+		}
+	}
+	function myfun2(){
+		var x1=document.getElementById("demo3").value;
+		var x2= document.getElementById("demo4").value;
+		var x3= document.getElementById("demo5").value;
+		if(x1>0&&x2>0&&x3>0){
+			document.getElementById("out2").innerHTML="the ouput is + ve";
+		}
+		else if (x1<0&&x2<0&&x3>0) {
+			document.getElementById("out2").innerHTML="the ouput is + ve";
+		}
+		else if (x1>0&&x2<0&&x3<0) {
+			document.getElementById("out2").innerHTML="the ouput is + ve";
+		}
+		else if (x1<0&&x2>0&&x3<0) {
+			document.getElementById("out2").innerHTML="the ouput is + ve";
+		}
+		else if (x1<0&&x2<0&&x3<0) {
+			document.getElementById("out3").innerHTML="the output  is +ve";
+		}
+		else{
+			document.getElementById("out2").innerHTML="the ouput is - ve";
+		}
+
+	}
+	function myfun3(){
+		var x=document.getElementById("demo6").value;
+		var y= document.getElementById("demo7").value;
+		var z= document.getElementById("demo8").value;
+		if (x>y && x>z){
+        if (y>z){
+            document.getElementById("out3").innerHTML=x+","+y+","+z;
+        }
+        else{
+           document.getElementById("out3").innerHTML= x + ", " + z + ", " +y;
+        }
+        }
+        else if (y>x && y >z){
+        if (x>z){
+            document.getElementById("out3").innerHTML= y + ", " + x + ", " +z;
+        }
+        else{
+            document.getElementById("out3").innerHTML= y + ", " + z + ", " +x;
+        }
+        }
+         else if (z>x && z>y){
+        if (x>y)
+        {
+           document.getElementById("out3").innerHTML= z + ", " + x + ", " +y;
+        }
+        else{
+           document.getElementById("out3").innerHTML= z + ", " + y + ", " +x;
+        }
+        }       
+
+	}
+	function myfun4(){
+		var a=document.getElementById("demo9").value;
+		var b= document.getElementById("demo10").value;
+		var c= document.getElementById("demo11").value;
+		var d= document.getElementById("demo12").value;
+		var e= document.getElementById("demo13").value;
+		if (a>b&&a>c&&a>d&&a>e) {
+			document.getElementById("out4").innerHTML=a;
+		}
+		else if (b>a&&b>c&&b>d&&b>e) {
+			document.getElementById("out4").innerHTML=b;
+		}
+		else if (c>a&&c>b&&c>d&&c>e) {
+			document.getElementById("out4").innerHTML=c;
+		}
+		else if (d>a&&d>b&&d>c&&d>e) {
+			document.getElementById("out4").innerHTML=d;
+		}
+		else  {
+			document.getElementById("out4").innerHTML=e;
+		}
+		
+	}
+
+	     /**for iterate odd or even**/
+		for (var x=0; x<=15; x++) {
+        if ( x===0) {
+                console.log(x +  " is even");
+        }
+        else if (x%2===0) {
+                console.log(x + " is even");   
+        }
+        else {
+                console.log(x + " is odd");
+        }
+        }
+		
+	/** to compute average mark and graade**/
+		var student = [['David', 80], ['Vinoth', 77], ['Divya', 88], ['Ishitha', 95], ['Thomas', 68]];
+		var Avgmarks=0;
+		for (var i = 0; i < student.length; i++) {
+			Avgmarks +=student[i][1];
+			var avg=(Avgmarks/student.length);
+		}
+		console.log("average mark:" +avg);
+		if (avg<60) {
+			console.log("the grade is: F");
+		}
+		else if (avg<70) {
+			console.log("the grade is: D");
+		}
+		else if (avg<80) {
+			console.log("the grade is: C");
+		}
+		else if (avg<90) {
+			console.log("the grade is: B");
+		}
+		else if (avg<100) {
+			console.log("the grade is: A");
+		}
+   /**fizzbuzz program**/
+   for (var i = 0; i <=100; i++) {
+   	if (i%3===0&&i%5===0) {
+   		console.log(i +"fizzbuzz");
+   	}
+   	else if (i%3===0) {
+   		console.log(i+"fizz");
+   	}
+   	else if(i%5===0){
+   		console.log(i+"buzz");
+   	}
+   	else{
+   		console.log(i);
+   	}
+   }
+   /**nested for loop**/
+   	var x,y,chr;
+   	for(x=1;x<=6;x++){
+   		for(y=1;y<x;y++)
+   		{
+   			chr=chr+("*");
+   		}
+   		console.log(chr);
+   		chr='';
+   	}
+   /**sum the multiple of  3 and 5 under 1000**/
+   var sum=0;
+   for(x=0;x<1000;x++){
+   	if (x%3===0||x%5===0) {
+   		sum=sum+x;
+   	}
+   }
+   console.log(sum);
+
+</script>
+</body>
+</html>

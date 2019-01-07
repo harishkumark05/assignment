@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>regular expression</title>
+</head>
+<body>
+	<h2>to test first character of the string is case sensitive or not</h2>
+	<input type="text" name="value" id="demo1">
+	<button onclick="myfun1()"> click</button>
+	<p >The entered character is case sensitive:<span id="out1"></span></p>
+	<h2>to test whether the number is valid credit card number or not(visa,mastercard)</h2>
+	<input type="number" name="value" id="demo2">
+	<button onclick="myfun2()"> click</button>
+	<p >The card is valid :<span id="out2"></span></p>
+	<input type="text" name="value" id="demo3">
+	<button onclick="myfun3()"> click</button>
+	<p >The card is valid :<span id="out3"></span></p>
+
+	<h2>the given date string is valid or not</h2>
+	<p>output in console</p>
+
+	<h2>trim function usiing regular expression</h2>
+	<input type="text" name="value" id="demo5">
+	<button onclick="myfun5()">submit</button>
+	<p>the trimed string is:<span id="out5"></span></p>
+
+	<h2> to count words of string</h2>
+	<textarea cols="100" rows="4" id="demo6">happy tto learn web development</textarea>
+	<button onclick="myfun6()"> click me</button>
+	<p>the word length:<span id="out6"></span></p>
+
+	<h2>to validate IP address</h2>
+	<input type="text" name="value" placeholder="XXX.XXX.XXX.XXX" id="demo7">
+	<button onclick="myfun7()">click me</button>
+	<p id="out7"></p>
+
+	<h2>to count the vowels of the string</h2>
+	<textarea id="demo8" > enter your text here</textarea>
+	<button onclick="myfun8()">click me</button>
+	<p>the length of the vowel is :<span id="out8"></span></p>
+
+	<h2>to find valid url</h2>
+	<input type="url" name="value" id="demo9">
+	<button onclick="myfun9()"> clck</button>
+	<p id="out9"> </p>
+
+	<h2>to check given value is  alpha numeric or not </h2>
+	<textarea cols="100" rows="4" id="demo10" > </textarea>
+	<button onclick="myfun10()"> click</button>
+	<p id="out10"></p>
+
+	<h2>to check a time string</h2>
+	<input type="text" name="value" placeholder="hh:mm:ss" id="demo11">
+	<button onclick="myfun11()">click</button>
+	<p id="out11"></p>
+
+	<h2>to validate us zip code</h2>
+	<p>9 digit 5-4</p>
+	<input type="text" name="value" id="demo12" placeholder="xxxxx-xxxx">
+	<button onclick="myfun12()"> click</button>
+	<p id="out12"></p>
+
+	<h2>to validate social secutity number SSN</h2>
+	<p>9 digit (3-2-4)</p>
+	<input type="text" name="value" id="demo13" placeholder="XXX-XX-XXXX">
+	<button onclick="myfun13()"> click</button>
+	<p id="out13"></p>
+
+	<h2>to check the value is hexadecimal or not</h2>
+	<input type="text" name="value" id="demo15">
+	<button onclick="myfun15()"> click</button>
+	<p id="out15"></p>
+
+	<h2>to check whether valid domain or not</h2>
+	<input type="text" name="value" id="demo16" placeholder="www.text.com">
+	<button onclick="myfun16()"> click</button>
+	<p id="out16"></p>
+
+	<h2>to check whetherthe text contains alpha ,dash and underscore</h2>
+	<textarea cols="100" rows="4" id="demo17"></textarea>
+	<button onclick="myfun17()"> click</button>
+	<p id="out17"></p>
+
+<script type="text/javascript">
+
+	function myfun1(){
+		var str1=document.getElementById("demo1").value;
+		var exp1= new RegExp(/^[A-Z]/);
+		var result1= exp1.test(str1);
+		document.getElementById("out1").innerHTML=result1;
+
+	}
+	function myfun2(){
+		var str2=document.getElementById("demo2").value;
+		var exp2= new RegExp(/^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6[0-9]{15}))$/);
+		var result2=exp2.test(str2);
+		document.getElementById("out2").innerHTML=result2;
+	}
+	function myfun3(){
+		var str3=document.getElementById("demo3").value;
+		var exp3=new RegExp(/[\w-]+@([\w-])+[\.]+[\w-]/);
+		var result3=exp3.test(str3);
+		document.getElementById('out3').innerHTML=result3;
+	}
+	function myfun4(str4){
+		regexp1=/^((([0-2]\d{1})|(3[0-1]))\/((0\d{1})|(1[0-2]))\/((19\d{2})|(20\d{2})))$/;
+		if (regexp1.test(str4)) {
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	console.log(myfun4("03/01/1996"));
+	console.log(myfun4("32/13/1996"));
+
+	function myfun5(){
+		var str5=document.getElementById("demo5").value;
+		var exp5= new RegExp(/^\s+|\s$/);
+		var result5= str5.replace(exp5,'');
+		document.getElementById("out5").innerHTML=result5;
+	}
+
+	function myfun6(){
+		var str6= document.getElementById("demo6").value;
+		var str6=str6.replace(/^\s*|\s*$/,"");		
+		var str6=str6.replace(/[]{2,}/,"");
+		var str6= str6.replace(/\n/,"\n");
+		document.getElementById('out6').innerHTML=str6.split(' ').length;
+	}
+	function myfun7(){
+		var str7=document.getElementById("demo7").value;
+		var exp7=new RegExp(/^([0-2]{1}[0-5]{1}[0-5]{1})\.([0-2]{1}[0-5]{1}[0-5]{1})\.([0-2]{1}[0-5]{1}[0-5]{1})\.([0-2]{1}[0-5)]{1}[0-5)]{1})/);
+		var result7=exp7.test(str7);
+		document.getElementById("out7").innerHTML=result7;
+	}
+	function myfun8(){
+		var str8= document.getElementById("demo8").value;
+		var exp8= new RegExp(/[aeiou]/gi);
+		var result8= str8.match(exp8).length;
+		document.getElementById("out8").innerHTML=result8;
+	}
+	function myfun9(){
+		var str9 = document.getElementById("demo9").value;
+		var exp9= new RegExp(/^(([http]|[https]):\/\/(([www]\.[A-Za-z]\.[com])|([A-Za-z]\.[com])))$/);
+		var result9= exp9.test(str9);
+		document.getElementById("out9").innerHTML=result9;
+	}
+	function myfun10(){
+		var str10= document.getElementById("demo10").value;
+		var exp10= RegExp(/^[A-Za-z0-9]+$/);
+		var result10= exp10.test(str10)
+		document.getElementById("out10").innerHTML=result10;
+	}
+	function myfun11(){
+		var str11 =document.getElementById("demo11").value;
+		var exp11 =RegExp(/^(([0-9]|1[0-2])\:([0-5]\d{1}|6[0])\:([0-5]\d{1}|6[0]))$/);
+		var result11 =exp11.test(str11);
+		document.getElementById("out11").innerHTML=result11;
+	}
+	function myfun12(){
+		var str12=document.getElementById("demo12").value;
+		var exp12=RegExp(/^([0-9][0-9][0-9][0-9][0-9])\-?([0-9][0-9][0-9][0-9])$/);
+		var result12=exp12.test(str12);
+		document.getElementById("out12").innerHTML=result12;
+	}
+function myfun13(){
+	 var str13=document.getElementById("demo13").value;
+	 var exp13=RegExp(/^([0-9][0-9][0-9])\-?([0-9][0-9])\-?([0-9][0-9][0-9][0-9])$/);
+	 var result13=exp13.test(str13);
+	 document.getElementById("out13").innerHTML=result13;
+}
+function myfun14(){
+	 var str14=document.getElementById("demo14").value;
+	 var exp14=RegExp(/^[0-9a-fA-F]+$/);
+	 var result14=exp14.test(str14);
+	 document.getElementById("out14").innerHTML=result14;
+}
+function myfun15(){
+	 var str15=document.getElementById("demo15").value;
+	 var exp15=RegExp(/^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/);
+	 var result15=exp15.test(str15);
+	 document.getElementById("out15").innerHTML=result15;
+}
+function myfun16(){
+	var str16=document.getElementById("demo16").value;
+	 var exp16=RegExp(/^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}$/i);
+	 var result16=exp16.test(str16);
+	 document.getElementById("out16").innerHTML=result16;
+}
+function myfun17(){
+	var str17=document.getElementById("demo17").value;
+	 var exp17=RegExp(/^[a-z0-9_\-]+$/);
+	 var result17=exp17.test(str17);
+	 document.getElementById("out17").innerHTML=result17;
+}
+ function myfun18(){
+ 	var str18= document.getElementById("demo18").value;
+ 	var str18=str18.toString();
+ 	var exp18=RegExp(/(-?\d+)(\d{3})/);
+ 	while(exp18.test(str18));
+ 	str18=str18.replace(exp18,"$1,$2");
+ 	document.getElementById("out18").innerHTML=str18;
+ }
+
+
+</script>
+</body>
+</html>
