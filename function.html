@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript functions</title>
+</head>
+<body>
+	<h1>Javascript functions</h1>
+
+	<h2>reverse a number</h2>
+	<input type="number" name="value" id="demo1">
+	<button onclick="myfun1()">click me!</button>
+	<p >The reverse of the number is:<span id="out1"></span></p>
+
+	<h2>to check palindrome or not</h2>
+	<input type="text" name="value" id="demo2">
+	<button onclick="myfun2()">click</button>
+	<p id="out2"></p>
+
+	<h2>to sort the text in alphabetic order</h2>
+	<input type="text" name="value" id="demo3">
+	<button onclick="myfun3()"> click</button>
+	<p id="out3"></p>
+
+	<h2>to convert first letter of each string to uppercase</h2>
+	<input type="text" name="value" id="demo4">
+	<button onclick="myfun4()">click</button>
+	<p id="out4"></p>
+
+<script type="text/javascript">
+	function myfun1(){
+		var n=document.getElementById("demo1").value;
+		str=n.toString();
+		document.getElementById("out1").innerHTML=str.split("").reverse().join("");
+	}
+	function myfun2(){
+		var n=document.getElementById("demo2").value;
+		str=n.toLowerCase();
+		var rev=str.split("").reverse().join("");
+		if(str===rev){
+			document.getElementById("out2").innerHTML="The value is palindrome";
+		}
+		else{
+			document.getElementById("out2").innerHTML="the value is not palindrome";
+		}
+	}
+	function myfun3(){
+		n=document.getElementById("demo3").value;
+		str=n.toString();
+		str=str.toLowerCase();
+		document.getElementById("out3").innerHTML=str.split("").sort().join("");
+	}
+	function myfun4(){
+		var str=document.getElementById("demo4").value;
+        var array1 = str.split(' ');
+        var newarray1 = [];
+        for(var x = 0; x < array1.length; x++){
+       newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
+  }
+      document.getElementById("out4").innerHTML= newarray1.join(' ');
+}
+
+</script>
+</body>
+</html>
