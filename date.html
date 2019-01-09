@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Exercises</title>
+</head>
+<body>
+	<h1>Date in / and - format</h1>
+	<button onclick="myfun1()">click me</button>
+	<h2>Get days in a month</h2>
+	<p>output in console</p>
+	<h2>Month name of a particular date</h2>
+	<p>output in console</p>
+	<h3>To compare dates</h3>	
+	<p>output in console</p>
+	<h2>difference between two dates  in days</h2>
+	<p>o/p in console</p>
+	<h2>javaSCript to get last day of a month</h2>
+	<p> output in console</p>
+	<h2>maximum dates from array of dates</h2>
+	<p>output in console</p>
+	<h2>to return anumber in minutes and hours</h2>
+	<p>output in console</p>
+	<h2>to find number of days in a year</h2>
+	<p>output in console</p>
+	<h2>js to get  quarter of the year</h2>
+	<p>output in console</p>
+	<h2>js to calculate age</h2>
+	<p>o/p in console</p>
+	<h2>textual representation of  day</h2>
+	<p>output in console</p>
+	<h2>javascript with sufix</h2>
+	<p>o/p in console</p>
+	<h2>Display month in textual format</h2>
+	<p>o/p in console</p>
+	<h2>JavaScript function to get a numeric representation of a month, with leading zeros (01 through 12)</h2>
+	<p>o/p in console</p>
+	<h2> function to get a short textual representation of a month, three letters (Jan through Dec)</h2>
+	<p>o/p in console</p>
+	<h2>JavaScript function to get a full numeric representation of a year (4 digits)</h2>
+	<p>output in console</p>
+	<h2>JavaScript function to get lowercase Ante meridiem and Post meridiem.</h2>
+	<p>o/p in console</p>
+	<h2>JavaScript function to get 24-hour format of an hour without leading zeros</h2>
+	<p>output in console</p>
+	<h2>js to get  minutes with leading zeros</h2>
+	<p>output in console</p>
+	<h2>Write a JavaScript function to get seconds with leading zeros (00 to 59).</h2>
+	<p>output in console</p>
+	<h2>JavaScript function to add specified years to a date</h2>
+	<p>output in console</p>
+	<h2>js to add specific month to date</h2>
+	<p>o/p in console</p>
+
+<script type="text/javascript">
+	function myfun1(){
+		var d1=new Date();
+		var dd=d1.getDate();
+		var mm=d1.getMonth()+1;
+		var yy=d1.getFullYear();
+		if(dd<10) dd='0'+dd;
+		if(mm<10) mm='0'+mm;
+		
+		alert(mm+'/'+dd+'/'+yy);
+		alert(mm+'-'+dd+'-'+yy);
+	}
+function getDaysInMonth(m,y){
+	var d2=new Date(y,m,0);
+    return d2.getDate();
+}
+console.log(getDaysInMonth(1,2012));
+console.log(getDaysInMonth(2, 2012));
+console.log(getDaysInMonth(9, 2012));
+console.log(getDaysInMonth(12, 2012));
+
+function myfun3(dat){
+	arr3=[ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+	 var d3=dat.getMonth();
+	 return arr3[d3];
+}
+console.log(myfun3(new Date('11/12/2018')));
+console.log(myfun3(new Date("12/12/2018")));
+
+function compare_dates(x,y){
+	if(x>y){
+		return ("date1>date2");
+	}
+	else if (x<y) {
+		return ("date1<date2");
+	}
+	else{
+		return ("date1=date2");
+	}
+
+}
+console.log(compare_dates(new Date('11/14/2013 00:00'), new Date('11/14/2013 00:00'))); 
+console.log(compare_dates(new Date('11/14/2013 00:01'), new Date('11/14/2013 00:00'))); 
+console.log(compare_dates(new Date('11/14/2013 00:00'), new Date('11/14/2013 00:01')));
+
+function myfun4(date4){
+	var dt4=new Date(date4);
+	if (dt4.getDay() ==6 || dt4.getDay() == 0) {
+		return "weekend";
+	}
+	else{
+		return"weekday";
+	}
+}
+console.log(myfun4('Nov 15, 2014')); 
+console.log(myfun4('Nov 16, 2014')); 
+console.log(myfun4('Nov 17, 2014'));
+
+function myfun5(d1,d2){
+var dt1=new Date(d1);
+var dt2=new Date(d2);
+dt1utc=Date.UTC(dt1.getFullYear(),dt1.getMonth(),dt1.getDate());
+dt2utc=Date.UTC(dt2.getFullYear(),dt2.getMonth(),dt2.getDate());
+return Math.floor(((dt2utc)-(dt1utc))/(1000*60*60*24));
+}
+console.log(myfun5('04/02/2014', '11/04/2014'));
+console.log(myfun5('12/02/2014', '11/04/2014'));
+function myfun6(y,m){
+	var d1=new Date(y,m+1,0);
+	return d1.getDate();
+}
+console.log(myfun6(2014,0));
+console.log(myfun6(2014,1));
+console.log(myfun6(2014,11));
+
+function myfun7(dat){
+	var d1=new Date(dat);
+	var newd1= d1.getDate()-1;
+	return new Date(d1.setDate(newd1));
+
+}console.log(myfun7('Nov 15, 2014'));
+console.log(myfun7('Nov 16, 2015'));
+console.log(myfun7('Nov 17, 2016'));
+
+function myfun8(arr ){
+	var d1=new Date(arr[0]);
+	var d2=new Date(arr[1]);
+	var d3=new Date(arr[2]);
+	if(d3>d2 && d3>d1){
+		return "2015/02/01";
+	}
+	else if (d2>d3&& d2>d1) {
+		return"2015/02/02";
+	}else{
+       "d1 is greater";
+	}
+}
+console.log(myfun8(['2015/02/01', '2015/02/02', '2015/01/03']));
+function myfun9(arr){
+	var d1=new Date(arr[0]);
+	var d2=new Date(arr[1]);
+	var d3=new Date(arr[2]);
+	if(d3<d2&&d3<d1){
+		return '2015/01/03';
+	}
+	else if (d2<d3 &&d2<d1) {
+		return '2015/02/02';
+	}
+	else
+	{
+		'2015/02/01';
+	}
+}
+console.log(myfun9(['2015/02/01', '2015/02/02', '2015/01/03']));
+
+function myfun10(num){
+	var n=num;
+var hou=(n/60);
+var hou1=Math.floor(hou);
+var min=(hou-hou1)*60;
+var min1=Math.round(min); 
+return n +"minutes="+hou1+"hours"+min1+"minuutes";
+}
+console.log(myfun10(200));
+var leap=function(year){
+	if ((year%400===0)||(year%4===0&&year%100!==0)) {
+		return "366 days";
+	}
+	else{
+		return "365 days";
+	}
+}
+console.log(leap(2304));
+
+function myfun11(date){
+var month=date.getMonth() + 1;
+var qut=(month/3);
+return Math.ceil(qut);
+}
+console.log(myfun11(new Date()));
+console.log(myfun11(new Date(2015, 1, 21))); 
+console.log(myfun11(new Date(2015, 10, 18)));
+
+function myfun12(dt){
+	var  today= new Date(dt);
+	var start=new Date(dt.getFullYear(),0,1);
+	return Math.ceil((today-start+1)/86400000);
+}
+console.log(myfun12(new Date(2015, 0, 15)));
+console.log(myfun12(new Date(2015, 11, 14))); 
+
+function myfun13(dt){
+	var date1=new Date(dt*1000);
+	var hou= date1.getHours();
+	var min=date1.getMinutes();
+	var sec=date1.getSeconds();
+	return (hou+":"+min+":"+sec);
+}
+console.log(myfun13(1412743274));
+
+function myfun14(y){
+	var date=new Date();
+	 var age=date-y;
+	 age=Math.floor(age/1000/60/60/24/365);
+	 return age;
+}
+console.log(myfun14(new Date(1982, 11, 4)));
+
+console.log(myfun14(new Date(1962, 1, 1)));
+
+function myfun15(){
+	var d1=new Date(2019,0,8);
+	var arr3=["sun","mon","tue","wed","thu","fri","sat"];
+	var day=d1.getDay();
+	return arr3[day];
+}
+console.log(myfun15());
+
+function myfun16(){
+ var arr =
+  //    0     1     2     3     4     5     6     7     8     9
+     [ "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
+  //    10    11    12    13    14    15    16    17    18    19
+       "th", "th", "th", "th", "th", "th", "th", "th", "th", "th",
+  //    20    21    22    23    24    25    26    27    28    29
+       "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
+  //    30    31
+       "th", "st" ];
+    var dat=new Date();
+    var day=dat.getDate();
+    return day+""+arr[day];
+
+}
+console.log(myfun16());
+
+function myfun17(){
+	var dt= new Date();
+	var month=["January","February","March","April","May","june","july","August","September","octuber","November","December"];
+	var dat=dt.getMonth();
+	return month[dat]; 
+}
+console.log(myfun17());
+
+function myfun18(){
+	var dt=new Date();
+	var month=dt.getMonth();
+
+	if(month<9){
+		return "0"+(month+1);
+	}
+	else{
+		return (month+1);
+	}
+}
+console.log(myfun18());
+
+function myfun19(){
+	var da= new Date();
+	var arr=["jan","feb","mar","apr","may","jun","jul","aug","sap","oct","nov","dec"];
+	var date=da.getMonth();
+	return arr[date];
+}
+console.log(myfun19());
+
+function myfun20(dt){
+	var date=new Date(dt);
+	var year=date.getFullYear();
+	return year;
+} 
+console.log(myfun20(new Date(2015,10,1))); 
+
+function myfun21(dt){
+	var date=new Date(dt);
+	 var year=date.getFullYear();
+	 var year1=year.toString();
+	var str= year1.substr(2);
+	 return str;
+}
+console.log(myfun21(new Date(2015,10,1))); 
+
+function myfun22(){
+	var date=new Date();
+	var time=date.getHours();
+	if(time<12){
+		return "am";
+	}
+	else{
+		return "Pm";
+	}
+}
+console.log(myfun22());
+
+function myfun23(){
+	var date=new Date();
+	var time=date.getHours();
+	if( time<12){
+     return time+"am";
+	}
+	else{
+	var time12=time%12;
+	return time12+"pm";
+}
+}
+console.log(myfun23());
+
+function myfun24(){
+	var date=new Date();
+	var time=date.getHours();
+	return time;
+}
+console.log(myfun24());
+
+function myfun25(){
+	var date=new Date();
+	var min=date.getMinutes();
+	if(min<9){
+		return "0"+min;
+	}
+	else {
+		return min;
+	}
+}
+console.log(myfun25());
+
+function myfun26(){
+	var date=new Date();
+	var sec=date.getSeconds();
+	if(sec<10){
+		return "0"+sec;
+	}
+	else {
+		return sec;
+	}
+}
+console.log(myfun26());
+
+function myfun27(dt12,n){
+
+	var date1=dt12.getFullYear();
+	var date2=date1+n;
+	return new Date(dt12.setDate(date2));
+
+}
+var dt12=new Date(2014,10,2);
+console.log(myfun27(dt12,10).toString());
+
+function myfun28(dt13,n){
+	var  getdate=dt13.getMonth()+n;
+	return new Date(dt13.setMonth(getdate));
+
+}
+dt13 = new Date(2014,10,2);
+console.log(myfun28(dt13, 10));
+
+function myfun29(dta1,dta2){
+	var diff=(dta1.getTime()-dta2.getTime());
+	var val=diff/1000/60;
+	return Math.abs(Math.round(val));
+
+}
+dta1 = new Date("October 13, 2014 11:11:00"); 
+dta2 = new Date("October 13, 2014 11:13:00"); 
+console.log(myfun29(dta1, dta2)); 
+</script>
+</body>
+</html>
