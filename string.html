@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript string exercise</title>
+</head>
+<body>
+	<h2> check whether an input is string or not.</h2>
+	<h2>Write a JavaScript function to check whether a string is blank or not.</h2>
+	<h2>Break a string and convert it into an array of words</h2>
+	<h2>Write a JavaScript function to extract a specified number of characters from a string</h2>
+	<h2> Write a JavaScript function to convert a string in abbreviated form</h2>
+	<h2>Write a JavaScript function to hide email addresses to protect from unauthorized user.</h2>
+	<h2>Write a JavaScript function to parameterize a string.</h2>
+	<h2>Write a JavaScript function to capitalize the first letter of a string.</h2>
+	<h2>Make capitalize the first letter of each word in a string</h2>
+	<h2>Write a JavaScript function to concatenates a given string n times (default is 1).</h2>
+	<h2>Formats a number to a human-readable string</h2>
+	<h2>Write a JavaScript function to truncate a string if it is longer than the specified number of characters. Truncated strings will end with a translatable ellipsis sequence ("…") (by default) or specified characters.</h2>
+	<h2>chop a string into chunks of a given length</h2>
+	<h2>Write a JavaScript function to count the occurrence of a substring in a string.</h2>
+	<h2>Write a JavaScript function to repeat a string a specified times.</h2>
+	<h2>Write a JavaScript function to get a part of string after a specified character.</h2>
+	<h2>Write a JavaScript function to truncate a string to a certain number of words.</h2>
+	<h2>Write a JavaScript function to alphabetize a given string.</h2>
+	<h2>JavaScript: Remove the first occurrence of a given 'search string' from a string</h2>
+	<h2>Write a JavaScript function to convert ASCII to Hexadecimal format.</h2>
+	<h2>Write a JavaScript function to find a word within a string.</h2>
+	<h2>Write a JavaScript function check if a string ends with specified suffix.</h2>
+	<h2>JavaScript function to escapes special characters for use in HTML.</h2>
+	<h2>JavaScript function to remove non-printable ASCII chars.</h2>
+	<h2>JavaScript function to convert a string to title case.</h2>
+	<h2>JavaScript function to test case insensitive (except special Unicode characters) string comparison</h2>
+	<h2>Write a JavaScript function to uncapitalize the first character of a string.</h2>
+	<h2>JavaScript function to Uncapitalize the first letter of each word of a string</h2>
+	<h2>JavaScript function to uncapitalize each word in the string</h2>
+	<h2>JavaScript function to test whether the character at the provided (character) index is upper case</h2>
+	<h2>JavaScript function to test whether the character at the provided character index is lower case</h2>
+	<h2>JavaScript function to test whether a string starts with a specified string</h2>
+	<h2>JavaScript function to test whether a string ends with a specified string</h2>
+
+<script type="text/javascript">
+	function myfun1(str){
+		if(typeof str==='string'){
+			return "true";
+		}
+		else{
+			return "false";
+		}
+
+	}
+	console.log(myfun1('apple'));
+	console.log(myfun1([1,2,3]));
+
+	function myfun2(str){
+		if (str.length===0) {
+			return "the string is empty";
+		}
+		else{
+			return "string is there";
+		}
+	}
+	console.log(myfun2(''));
+	console.log(myfun2('ha'));
+
+	function myfun3(str){
+	return str.split(" ");
+	}
+	console.log(myfun3("harish kumar"));
+
+	function myfun4(str,length){
+		return str.substr(0,length);
+	}
+	console.log(myfun4("Robin Singh",4));
+
+	function myfun5(str){
+		var sp=str.split(" ");
+		return (sp[0]+" "+sp[1].charAt(0));
+	}
+	console.log(myfun5("harish kumar"));
+
+	function myfun6(mail){
+		var splitmail=mail.split("@");
+		var val1=splitmail[0].length;
+		var val2=Math.floor(val1/2);
+		var val3=splitmail[0].substring(0,val2);
+		return val3 +"....@"+splitmail[1];
+
+	}
+	console.log(myfun6("harishkumar5016@gmail.comm"));
+
+	function myfun7(str){
+		return str.trim(" ").toLowerCase().replace(/\s/g,"-");
+
+	}
+	console.log(myfun7("Robin Singh from USA."));
+
+	function myfun8(str1){
+		var1=str1.substring(1);
+  return str1.charAt(0).toUpperCase()+var1;
+}
+    
+ console.log(myfun8('js string exercises'));
+
+ function myfun9(str){
+ 	return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+ }
+ console.log(myfun9('js string exercises'));
+
+ function myfun10(str){
+ 	return str.replace(/([a-z])|([A-Z])/g,function(match,chr){
+ 		return chr?match.toUpperCase():match.toLowerCase();
+ 	});
+ }
+ console.log(myfun10("AAaa"));
+
+ function myfun11(str){
+ 	return str.replace(/\w+(.)/g, function(match,chr)
+ 	{
+ 		return chr.toUpperCase();
+ 	});
+ }
+ console.log(myfun11("javascript Exercise"));
+
+ function myfun12(str,n){
+return str.repeat(n);
+
+ }
+ console.log(myfun12('ha!',2));
+  console.log(myfun12('ha!',3));
+
+  function myfun13(str,ind,n){
+   if (typeof(n)=="undefined") {
+   	n=0;
+   }
+   if (typeof(ind)=="undefined") {
+   	ind="";
+   }
+   else{
+   	return str.slice(0,n)+ind+str.slice(n);
+   }
+  }
+  console.log(myfun13('We are doing some exercises.','JavaScript '));
+console.log(myfun13('We are doing some exercises.','JavaScript ',18));
+
+function myfun14(n){
+	if (typeof(n)=="undefined") {
+		return;
+	}
+	if(n%100>=11&&n%100<=13){
+		return n+"th";
+	}
+	switch(n%10){
+		case 1:return n+"st";
+		case 2:return n+"nd";
+		case 3:return n+"rd";
+	}
+	return n +"th";
+
+}
+console.log(myfun14());  
+console.log(myfun14(1));  
+console.log(myfun14(8));  
+console.log(myfun14(301));  
+console.log(myfun14(402)); 
+
+function myfun15(w,n,c){
+	if (typeof(w,n)=="undefined") {
+		return w;
+	}
+	if (typeof(c)=="undefined") {
+		return (w.slice(0,n-3)+"...");
+	}
+	else{
+		return w.slice(0,n-3)+c;
+	}
+}
+console.log(myfun15('We are doing JS string exercises.'));
+console.log(myfun15('We are doing JS string exercises.',19));
+console.log(myfun15('We are doing JS string exercises.',15,'!!'));
+
+function myfun16(str,n){
+	var str1=[];
+	 str1=str.split('');
+	if (typeof(n)==="undefined") {
+		return str1.join('');
+	}
+	if (n===2) {
+		return str.match(/.{1,2}/g).join(' '); 
+	}
+}
+console.log(myfun16('w3resource'));
+console.log(myfun16('w3resource',2));
+
+function myfun17(str1,str2,val){
+	var string=str1.toLowerCase();
+	string=string.split(' ');
+	var count=0;
+	for (var i = 0; i < string.length; i++) {
+		if (val ===false&&string[i]===str2) {
+			count++;
+		}
+		else if (string[i]===str2){
+			count++;
+			return count;
+		}
+	}
+return count;
+}
+console.log(myfun17("The quick brown fox jumps over  lazy dog", 'the'));
+console.log(myfun17("The quick brown fox jumps over the lazy dog", 'fox',false));
+
+function myfun18(str,n){
+	if ((n==null)||(n<0)||(n===Infinity)) {
+		return ("Error in string count.");
+	}
+	else{
+	return new Array(n ).join(str);
+}
+}
+console.log(myfun18('a',4));
+console.log(myfun18('a'));
+console.log(myfun18('a', -2));
+console.log(myfun18('a', Infinity));
+
+function myfun19(str,val,til){
+	if (til=="b") {
+		return str.substring(str.indexOf(val));
+	}
+	else if (till="a") {
+		return str.substring(0,str.indexOf(val));
+	}
+	else
+		return str;
+
+}
+console.log(myfun19('w3resource: JavaScript Exercises', ':','a'));
+
+console.log(myfun19('w3resource: JavaScript Exercises', 'E','b'));
+
+function myfun20( str){
+	return str.replace(/^\s+|\s+$/g,"");
+}
+console.log(myfun20('w3resource '));
+console.log(myfun20(' w3resource'));
+console.log(myfun20(' w3resource  '));
+
+function myfun21(str,y){
+	return str.split(" ").splice(0,y).join(" ");
+}
+console.log(myfun21('The quick brown fox jumps over the lazy dog', 4));
+
+function myfun22(str){
+	return str.split('').sort().join('') ;
+}
+console.log(myfun22('United States'));
+
+function myfun23(str,ind){
+	var index=str.indexOf(ind);
+	return str.slice(0,index)+str.slice(index+ind.length);  
+
+}
+console.log(myfun23("The quick brown fox jumps over the lazy dog", 'the'));
+
+function myfun24(str){
+	var arr=[];
+	for (var i = 0,n=str.length; i <n; i++) {
+		var hex=Number(str.charCodeAt(i)).toString(16);
+		arr.push(hex);
+	}
+	return arr.join( ' ');
+		}
+console.log(myfun24('12'));
+console.log(myfun24('100'));
+
+function myfun25(str1,str2){
+	if (str1==='fox') {
+       var count=(str1.match(/fox/g)||[]).length;
+       return str1 +"wasfound"+count+"times";
+	}
+	if (str2==="aa") {
+		var count=(str2.match(/aa/g)||[]).length;
+		return str2+" wasfound "+count+" times";
+	}
+
+}
+console.log(myfun25('The quick brown fox', 'fox'));
+console.log(myfun25('aa, bb, cc, dd, aa', 'aa'));
+
+function myfun26(str, suffix) 
+{
+ 
+ if (((str===null)||(str===''))||((suffix===null)||(suffix==='')))
+   {
+    return false;
+   }
+  else
+  {     
+   str = str.toString();
+   suffix = suffix.toString();
+   }
+ return str.indexOf(suffix, str.length -     suffix.length) !== -1;
+}
+
+console.log(myfun26('JS PHP PYTHON','PYTHON'));
+console.log(myfun26('JS PHP PYTHON',''));
+
+function myfun27(str){
+	var str=str.toString();
+	var map={
+		'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	'"': '&quot;',
+	"'": '&#039;'
+};
+return str.replace(/[&<>"'']/g,function(m){
+	return map[m];
+});
+
+}
+console.log(myfun27('PHP & MySQL'));
+console.log(myfun27('3 > 2'));
+
+function myfun28(str){
+	if ((str===null)||(str==='')) {
+		return false;
+	}
+		else
+			str=str.toString();
+		return str.replace(/[^\x20-\x7E]/g," ");	 
+	}
+console.log(myfun28('äÄçÇéÉêPHP-MySQLöÖÐþúÚ'));
+
+function myfun29(str){
+  if ((str===null) || (str===''))
+       return false;
+  else
+   str = str.toString();
+
+ return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
+console.log(myfun29('PHP exercises. python exercises.'));
+
+function myfun30(str1,str2){
+	var equ=str1.toUpperCase()===str2.toUpperCase();
+	return equ;
+}
+console.log(myfun30('abcd', 'AbcD'));
+console.log(myfun30('ABCD', 'Abce'));
+
+function myfun31(str1,str2){
+	var str1=str1.toLowerCase();
+	var str2=str2.toLowerCase();
+	var res= str1.includes(str2);
+	if (res=== true) {
+		return "matched";
+}
+else
+return" not-matched";
+}
+console.log(myfun31('JavaScript Exercises', 'exercises'));
+console.log(myfun31('JavaScript Exercises', 'Exercises'));
+console.log(myfun31('JavaScript Exercises', 'Exercisess'));
+
+function myfun32(str){
+	return str.charAt(0).toLowerCase()+str.slice(1);
+
+}
+console.log(myfun32('Js string exercises'));
+
+function myfun33(str){
+	return str.replace(/\s\w*/g,function(m){
+		return m.charAt(0).toLowerCase()+m.substr(1).toLowerCase();		
+	}); 
+
+}
+console.log(myfun33('Js String Exercises'));
+
+function myfun34(str){
+	return str.replace(/\s\w*/g,function(m){
+		return m.substr(0).toLowerCase();
+	});
+}
+console.log(myfun34('JS STRING EXERCISES'));
+
+function myfun35(str,index){
+	return str.charAt(index).toUpperCase() ===str.charAt(index);
+}
+console.log(myfun35('Js STRING EXERCISES', 1));
+
+function myfun36(str,index){
+	return str.charAt(index).toLowerCase()===str.charAt(index);
+}
+console.log(myfun36('Js STRING EXERCISES', 1));
+
+function myfun37(str,index){
+	return str.indexOf(index)===0 ;
+}
+console.log(myfun37('js string exercises', 'js'));
+
+function myfun38(input, string) {
+        var index = input.length - string.length;
+        return index >= 0 && input.indexOf(string, index) > -1;
+    }
+console.log(myfun38('JS string exercises', 'exercises'));
+</script>
+</body>
+</html>
