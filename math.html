@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math</title>
+</head>
+<body>
+	<h2>Base convert</h2>
+	<h2>Write a JavaScript function to convert a binary number to a decimal number.</h2>
+	<h2>Write a JavaScript function to convert a decimal number to binary, hexadecimal or octal number.</h2>
+	<h2>Javascript random function</h2>
+	<h2>Write a JavaScript function to format a number up to specified decimal places</h2>
+	<h2>JavaScript: Find the highest value in an array</h2>
+	<h2>JavaScript: Find the mininum value in an array</h2>
+	<h2>Write a JavaScript function to get the greatest common divisor (gcd) of two integers.</h2>
+	<h2>Write a JavaScript function to get the least common multiple (LCM) of two numbers.</h2>
+	<h2>Checking for Natural Numbe</h2>
+	<h2>Test if a number is a power of 2</h2>
+	<h2>Round a number to a given decimal places</h2>
+	<h2>Check whether a value is an integer or not</h2>
+	<h2>Check whether a variable is numeric or not</h2>
+	<h2>Write a JavaScript function to calculate the sum of values in an array.</h2>
+	<h2>Write a JavaScript function to calculate the product of values in an array.</h2>
+	<h2>pythagorean_theorem</h2>
+	<h2>JavaScript function to round a number to a specified number of digitsand strip extra zeros (if any).</h2>
+	<h2>Write a JavaScript function to calculate the nth root of a number.</h2>
+	<h2>Write a JavaScript function to round up an integer value to the next multiple of 5.</h2>
+	<h2>JavaScript function to convert a positive number to negative number.</h2>
+	<h2>JavaScript function to cast a square root of a number to an integer.</h2>
+	<h2>JavaScript function to get the highest number from three different numbers</h2>
+	<h2>JavaScript function to to calculate the percentage (%) of a number</h2>
+	<h2>JavaScript function to convert  degrees to radiant</h2>
+	<h2>JavaScript function to convert radians to degrees</h2>
+	<h2>Write a JavaScript function for the Pythagorean theorem</h2>
+	<h2>JavaScript function which will return values that are powers of two</h2>
+	<h2>JavaScript function to check if a number is a whole number or has a decimal place</h2>
+	<h2>Write a JavaScript function to count the digits of an integer.</h2>
+<script type="text/javascript">
+	function baseConvert(num,ini,chg){
+		if ((ini&&chg)<2||(ini&&chg)>36) {
+			return "base between 2 and 36";
+		}
+		else{
+			return parseInt(num,ini).toString(chg);
+		}
+	}
+	console.log(baseConvert('E164',16,8));
+    console.log(baseConvert(1000,2,8));
+
+    function btd(bin){
+    	return parseInt(bin,2);
+    }
+    console.log(btd('110011'));
+    console.log(btd('100'));
+
+    function dtbho(a,b){
+    	if (b==='B') {
+    		return a.toString(2);
+    	}
+        if (b==='H') {
+        	return a.toString(16);
+        }
+        if(b==='O'){
+        	return a.toString(8);
+        }
+    }
+    console.log(dtbho(120,'B'));
+    console.log(dtbho(120,'H'));
+    console.log(dtbho(120,'O'));
+
+    function rand(min,max){
+    	if (min==null&&max==null) {
+    		return 0;
+    	}
+    	if (max=0) {
+    		max=min;
+    		min=0;
+    	}
+    	return min+Math.floor(Math.random()*(max-min+1));
+    };
+     console.log(rand(20,1));
+ console.log(rand(1,10));
+ console.log(rand(6));
+ console.log(rand());	
+
+
+function max(a){
+	var maxValue=Math.max.apply([],a);
+	return maxValue;
+}
+console.log(max([12,34,56,1]));
+
+function min(a){
+	var minValue=Math.min.apply([],a);
+	return minValue;
+}
+console.log(min([12,34,56,1]));
+console.log(min([-12,-34,0,-56,-1]));
+
+function gcd(x,y){
+	x=Math.abs(x);
+	y=Math.abs(y);
+	while(y){
+		var t=y;
+		y=x%y;
+		x=t;
+	}
+	return x;
+
+}
+console.log(gcd(12, 13));
+console.log(gcd(9, 3));
+
+function lcm(x,y){
+	if ((typeof x !=='number')||(typeof y !=='number')) {
+		return false;
+	}
+	return (!x||!y)?0:Math.abs((x*y)/gcd(x,y));
+}
+function gcd(x, y) {
+  x = Math.abs(x);
+  y = Math.abs(y);
+  while(y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
+}
+console.log(lcm(3,15));
+console.log(lcm(10,15));
+
+function Natural(n){
+	if (typeof n!=='number') {
+		return "not a number";
+	}
+	else{
+		return(n>=0.0)&&(Math.floor(n)===n)&&(n!== Infinity);
+	}
+}
+console.log(Natural(-15));
+console.log(Natural(1));
+console.log(Natural(10.22));
+console.log(Natural(10/0));
+
+function power(n) {
+ if (typeof n !== 'number') 
+      return 'Not a number'; 
+else{
+    return n && (n & (n - 1)) === 0;
+}
+}
+
+console.log(power(16));
+console.log(power(18));
+console.log(power(256));
+
+function roundDecimal(num,dec){
+	return num.toFixed(dec);
+}
+console.log(roundDecimal(12.375,2));
+console.log(roundDecimal(12.37499,2));
+console.log(roundDecimal(-10.3079499, 3));
+
+function integer(num){
+	var res=false;
+	if (num=parseInt(num,10)) {
+		res=true;
+	}
+	return res;
+}
+console.log(integer(23));
+console.log(integer(4e2));
+console.log(integer(NaN));
+console.log(integer(23.75));
+console.log(integer(-23));
+
+function intNumber(inp){
+	return !/[^0-9.-]/.test(inp.toString());
+}
+console.log(intNumber(12));
+console.log(intNumber('abcd'));
+console.log(intNumber('12'));
+console.log(intNumber(' '));
+console.log(intNumber(1.20));
+console.log(intNumber(-200));
+
+function sumArray(input){
+	var total =  0;
+            for(var i=0;i<input.length;i++){
+                  total += Number(input[i]);
+               }
+             return total;
+}
+console.log(sumArray([1,2,3]));
+console.log(sumArray([100,-200,3]));
+console.log(sumArray([1,2,'a',3]));
+
+function productArray(input){
+	var total =1;
+	for(var i=0;i<input.length;i++){
+		total *=Number(input[i]);
+	}
+	return total;
+}
+console.log(productArray([1,2,3]));
+console.log(productArray([100,-200,3]));
+console.log(productArray([1,2,'a',3]));
+
+function pytha(x,y){
+	return Math.sqrt(x*x+y*y);
+}
+console.log(pytha(2, 4));
+console.log(pytha(3, 4));
+
+var a11 = 1.1234000;
+
+
+var result11 = parseFloat(a11.toFixed(4));
+console.log(result11);
+
+function nthroot(base, root) {
+    return Math.pow(base, 1 / root);
+}
+
+console.log(nthroot(64, 2)); 
+console.log(nthroot(64, -2)); 
+
+function deg(x1,y1,x2,y2){
+	return Math.atan2(y2-y1,x2-x1)*180/Math.PI;
+}
+console.log(deg(1, 0, 12, 0));
+console.log(deg(1, 0, 1, 10));
+
+function mul5(num){
+	return Math.ceil(num/5)*5;
+}
+console.log(mul5(32));
+console.log(mul5(137));
+console.log(mul5(142));
+
+function ptn(num){
+	return -Math.abs(num);
+}
+console.log(ptn(15));
+
+function sqrtInt(num){
+	return parseInt(Math.sqrt(num));
+}
+console.log(sqrtInt(17));
+
+function highest(n1,n2,n3){
+	return Math.max(n1,n2,n3);
+}
+console.log(highest(-5, 4, 2));
+
+function percentage(num,per){
+	return (num/100)*per;
+}
+console.log(percentage(1000,47.12));
+
+function d2r(num)
+{
+	var pi=Math.PI;
+	return num*(pi/180);
+}
+console.log(d2r(45));
+
+function r2d(num){
+	var pi=Math.PI;
+	return num*(180/pi);
+}
+console.log(r2d(0.785));
+
+function pythagorean(sideA, sideB){
+  return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+}
+
+console.log(pythagorean(4, 3));
+
+function power(num){
+	return num&&(num&(num-1))===0;
+}
+console.log(power(64));  
+console.log(power(94));
+
+function numtest(n){
+	var  result=(n-Math.floor(n))!==0;
+	if (result) {
+		return"number has decimal";
+	}
+	else
+		return "not-decimal";
+}
+console.log(numtest(25.66));
+
+console.log(numtest(10));
+
+function count(num){
+	var digits=(""+num).split("");
+	return digits.length;
+}
+console.log(count(12112));
+
+console.log(count(457));
+</script>
+</body>
+</html>
